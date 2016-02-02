@@ -162,7 +162,7 @@ class Payment extends \Magento\Payment\Model\Method\Cc
      * @param null $quote
      * @return bool
      */
-    public function isAvailable($quote = null)
+    public function isAvailable(\Magento\Quote\Api\Data\CartInterface $quote = null)
     {
         if ($quote && (
             $quote->getBaseGrandTotal() < $this->_minAmount
